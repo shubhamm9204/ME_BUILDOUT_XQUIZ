@@ -15,18 +15,38 @@ public class Quiz{
                 // initialise the quizName with the string taken as input in this constructor
                 // initialise the questions to a new and empty arraylist
                 // initialise the finalScore to Zero
-        
+                public Quiz(String quizName){
+                    if(quizName == null || quizName.trim().isEmpty()){
+                        System.out.println("Quiz Name cannot be null or empty!");
+                    } else {
+                        this.quizName = quizName;
+                        this.questions = new ArrayList<>();
+                        this.finalScore = 0;
+                    }
+                }
 
     //TODO: Create the getter method : public String getQuizName(), which returns the quizname
-
+    public String getQuizName(){
+        return quizName;
+    }
     //TODO: Create the getter method :public List<Question> getQuestions(), which returns the questions list
-
+    public List<Question> getQuestions(){
+        return questions;
+    }
     //TODO: Create the getter method : public int getFinalScore(), which returns the final score
-
+    public int getFinalScore(){
+        return finalScore;
+    }
     //TODO: Create addQuestion() method:  public void addQuestion(Question question)
         // Validate: If question is Null, print “Question cannot be null!”.
          // If question is not null then add the question to list of questions
-
+         public void addQuestion(Question question){
+            if(question == null){
+                System.out.println("Question cannot be null!");
+            } else {
+                questions.add(question);
+            }
+        }
 
 
     public void attemptQuiz(){
@@ -50,7 +70,7 @@ public class Quiz{
     
     public void revealAnswerKey(){
         // TODO: add loop for printing all the questions along with answers in the questions list.
-        {
+        for(int i = 0; i < questions.size(); i++){
             System.out.println("Question no. " + (i+1) + " : " + questions.get(i).getQuestionText() +
                     "\nAnswer no. " + (i+1) + " : " + questions.get(i).getAnswer());
         }
