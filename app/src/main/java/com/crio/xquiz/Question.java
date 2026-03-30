@@ -31,14 +31,17 @@ public class Question{
                       
                         if (questionText == null || questionText.trim().isEmpty()) {
                             System.out.println("Question text cannot be null or empty!");
+                            return;
                         }
                       
                         else if (choices == null || choices.isEmpty()) {
                             System.out.println("Choices cannot be null or empty!");
+                            return;
                         }
                        
                         else if (answer == null || answer.trim().isEmpty()) {
                             System.out.println("Answer cannot be null or empty!");
+                            return;
                         }
                         
                         else {
@@ -89,6 +92,7 @@ public class Question{
             }
 
 public void display(){
+    if (choices == null) return; 
     System.out.println(getQuestionText());
     for(int i = 0; i < choices.size(); i++){
         int choiceNumber = i + 1;

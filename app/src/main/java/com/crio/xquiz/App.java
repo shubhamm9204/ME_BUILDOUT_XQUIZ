@@ -10,7 +10,7 @@ public class App {
         Quiz quiz1 = new Quiz("General Knowledge Test");
         String text1 = "What was the original name of the Java language?";
         List<String> choices1 = new ArrayList<>();
-        choices1.add("*7");
+        choices1.add("7");
         choices1.add("Duke");
         choices1.add("Oak");
         choices1.add("Gosling");
