@@ -92,7 +92,7 @@ public class Question{
             }
 
 public void display(){
-    if (choices == null) return; 
+    if (choices == null || questionText == null) return; 
     System.out.println(getQuestionText());
     for(int i = 0; i < choices.size(); i++){
         int choiceNumber = i + 1;
